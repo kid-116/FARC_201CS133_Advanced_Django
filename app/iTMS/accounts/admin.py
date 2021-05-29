@@ -9,7 +9,10 @@ class AccountAdmin(UserAdmin):
         'first_name',
         'last_name',
     )
-    search_fields = ()
+    search_fields = (
+        'username',
+        'email',
+    )
     readonly_fields = (
         'username',
         'email',
