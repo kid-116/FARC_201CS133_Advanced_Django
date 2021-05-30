@@ -16,7 +16,7 @@ class Event(models.Model):
     venue = models.CharField(max_length=30, blank=False, null=False)
     desc = models.CharField(max_length=100, blank=True, verbose_name="Description")
     created_at = models.DateTimeField(auto_now_add=True)
-    table = models.ForeignKey(Timetable, blank=False, on_delete=models.CASCADE, null=False)
+    table = models.ForeignKey(Timetable, blank=False, on_delete=models.CASCADE, null=False, related_name='events')
 
 class Period(models.Model):
     DAYS = (
@@ -34,5 +34,5 @@ class Period(models.Model):
     ends_at = models.TimeField(blank=False, null=False)
     venue = models.CharField(max_length=30,blank=True, null=True)
     day = models.PositiveSmallIntegerField(choices=DAYS)
-    table = models.ForeignKey(Timetable, blank=False, null=False, on_delete=models.CASCADE)
+    table = models.ForeignKey(Timetable, blank=False, null=False, on_delete=models.CASCADE, related_name='periods')
 
