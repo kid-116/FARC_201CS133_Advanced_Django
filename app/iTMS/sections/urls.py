@@ -3,4 +3,6 @@ from . import views
 
 app_name = 'sections'
 
-urlpatterns = []
+urlpatterns = [
+    url('home/', views.home, name='home_path'),
+]

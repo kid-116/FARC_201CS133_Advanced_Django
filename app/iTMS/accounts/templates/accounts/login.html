@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+    iTMS | Login
+{% endblock %}
+
+{% block body %}
+    <h1>Login</h1>
+    <form action="{% url 'accounts:login_path' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+        {% endif %}
+        <input type="submit" value="Login">
+    </form>
+{% endblock %}

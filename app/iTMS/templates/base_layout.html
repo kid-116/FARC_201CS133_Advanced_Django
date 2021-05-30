@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'landing_path' %}">iTMS</a>
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li><a href=""></a>{{ request.user.username }}</li>
+                        <li><a href="{% url 'accounts:logout_path' %}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'accounts:login_path' %}">Login</a></li>
+                        <li><a href="{% url 'accounts:signup_path' %}">Signup</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
