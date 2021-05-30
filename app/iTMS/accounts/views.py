@@ -7,7 +7,7 @@ def signup_acc(request):
     if request.user.is_authenticated:
         logout(request)
     if request.method == 'POST':
-        form = AccountSignupForm
+        form = AccountSignupForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -33,8 +33,7 @@ def login_acc(request):
                 login(request, user)
                 if 'next' in request.POST:
                     return redirect(request.POST.get('next'))
-                else:
-                    return redirect('sections:home_path')
+                return redirect('sections:home_path')
     else:
         form = AccountAuthenticationForm()
     return render(request, 'accounts/login.html', { 'form': form })

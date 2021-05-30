@@ -2,12 +2,6 @@ from django.db import models
 from django.db.models.fields import TimeField
 from sections.models import Section
 
-class Timetable(models.Model):
-    id = models.AutoField(primary_key=True)
-    section = models.ForeignKey(Section, related_name='timetable', blank=False, null=False, on_delete=models.CASCADE)
-    def __str__(self):
-        return "Timetable for " + self.section.name
-
 class Event(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30, blank=False, null=False)
@@ -16,7 +10,7 @@ class Event(models.Model):
     venue = models.CharField(max_length=30, blank=False, null=False)
     desc = models.CharField(max_length=100, blank=True, verbose_name="Description")
     created_at = models.DateTimeField(auto_now_add=True)
-    table = models.ForeignKey(Timetable, blank=False, on_delete=models.CASCADE, null=False, related_name='events')
+    section = models.ForeignKey(Section, blank=False, on_delete=models.CASCADE, null=False, related_name='events')
 
 class Period(models.Model):
     DAYS = (
@@ -34,5 +28,5 @@ class Period(models.Model):
     ends_at = models.TimeField(blank=False, null=False)
     venue = models.CharField(max_length=30,blank=True, null=True)
     day = models.PositiveSmallIntegerField(choices=DAYS)
-    table = models.ForeignKey(Timetable, blank=False, null=False, on_delete=models.CASCADE, related_name='periods')
+    section = models.ForeignKey(Section, blank=False, null=False, on_delete=models.CASCADE, related_name='periods')
 

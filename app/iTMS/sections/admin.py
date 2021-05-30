@@ -1,7 +1,9 @@
 from django.contrib import admin
 from .models import Section
+from .forms import SectionCreationForm
 
 class SectionAdmin(admin.ModelAdmin):
+    form = SectionCreationForm
     list_display = (
         'name',
         'cr',
