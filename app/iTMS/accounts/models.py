@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from sections.models import Section
 
 class AccountManager(BaseUserManager):
     def create_user(self, username, email, first_name, last_name, password=None, is_staff=False, is_admin=False, is_active=True):
@@ -45,6 +46,8 @@ class Account(AbstractBaseUser):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=30, blank=False, null=False)
     last_name = models.CharField(max_length=30, blank=False, null=False)
+    section = models.ForeignKey(Section, blank=True, null= True, on_delete=models.DO_NOTHING, related_name='students')
+    is_cr = models.BooleanField(default=False, verbose_name="Is CR")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)

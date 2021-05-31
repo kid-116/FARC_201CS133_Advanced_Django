@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.landing, name='landing_path'),
     path('accounts/', include('accounts.urls')),
     path('sections/', include('sections.urls')),
+    path('lectures/', include('lectures.urls')),
 ]
