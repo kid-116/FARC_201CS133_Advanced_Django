@@ -16,7 +16,7 @@ def create(request):
                 return redirect('sections:home_path')
         else:
             form = LectureCreationForm()
-        return render(request, 'lectures/create.html', { 'form': form, 'action': 'Create' })
+        return render(request, 'lectures/create.html', { 'form': form })
     else:
         raise PermissionError
 
@@ -27,6 +27,15 @@ def edit(request, id_l):
         form = LectureCreationForm(request.POST or None, instance=lecture)
         if form.is_valid():
             form.save()
-        return render(request, 'lectures/create.html', { 'form': form, 'action': 'Edit' })
+            return redirect('sections:home_path')
+        return render(request, 'lectures/edit.html', { 'form': form, 'lecture': lecture })
+    else:
+        raise PermissionError
+
+@login_required(login_url='accounts:login_path')
+def delete(request, id_l):
+    if request.user.section and request.user.is_cr:
+        Lecture.objects.get(id=id_l).delete()
+        return redirect('sections:home_path')
     else:
         raise PermissionError

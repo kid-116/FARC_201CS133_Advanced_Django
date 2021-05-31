@@ -6,9 +6,9 @@
 
 {% block body %}
     <h1>Lecture</h1>
-    <form action="{% url 'lectures:create_path' %}" method="post">
+    <form action="{% url 'lectures:edit_path' id_l=lecture.id %}" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Create">
+        <input type="submit" value="Save">
     </form>
 {% endblock %}

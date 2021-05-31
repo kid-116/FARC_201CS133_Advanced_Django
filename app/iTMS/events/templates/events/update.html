@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+    iTMS | Event
+{% endblock %}
+
+{% block body %}
+    <h1>Event</h1>
+    <form action="{% url 'events:edit_path' id_e=event.id %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Save">
+    </form>
+{% endblock %}
