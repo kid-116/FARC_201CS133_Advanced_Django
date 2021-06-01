@@ -4,6 +4,12 @@
     iTMS | Login
 {% endblock %}
 
+{% block style %}
+    a.login {
+        display: none;
+    }
+{% endblock %}
+
 {% block body %}
     <h1>Login</h1>
     <form action="{% url 'accounts:login_path' %}" method="post">

@@ -9,20 +9,24 @@
             {% endblock %}
         </title>
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
-        {% block style %}
-        {% endblock %}
+        <style>
+            {% block style %}
+            {% endblock %}
+        </style>
     </head>
     <body>
         <header>
-            <a href="{% url 'landing_path' %}">iTMS</a>
+            <div class="logo">
+                <a href="{% url 'landing_path' %}"><h1>iTMS</h1></a>
+            </div>
             <nav>
                 <ul>
                     {% if user.is_authenticated %}
-                        <li><a href=""></a>{{ request.user.username }}</li>
-                        <li><a href="{% url 'accounts:logout_path' %}">Logout</a></li>
+                        <li class="info">{{ request.user.username }}</li>
+                        <a href="{% url 'accounts:logout_path' %}"><li><span class="action">Logout</span></li></a>
                     {% else %}
-                        <li><a href="{% url 'accounts:login_path' %}">Login</a></li>
-                        <li><a href="{% url 'accounts:signup_path' %}">Signup</a></li>
+                        <a href="{% url 'accounts:login_path' %}" class="login"><li><span class="action">Login</span></li></a>
+                        <a href="{% url 'accounts:signup_path' %}" class="signup"><li><span class="action">Signup</span></li></a>
                     {% endif %}
                 </ul>
             </nav>

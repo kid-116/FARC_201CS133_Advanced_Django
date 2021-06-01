@@ -4,6 +4,12 @@
     iTMS | Signup
 {% endblock %}
 
+{% block style %}
+    a.signup {
+        display: none;
+    }
+{% endblock %}
+
 {% block body %}
     <h1>Signup</h1>
     <form action="{% url 'accounts:signup_path' %}" method="post">

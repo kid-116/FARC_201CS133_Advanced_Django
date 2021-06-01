@@ -208,7 +208,8 @@ nav li {
   border-radius: 5px;
   font-family: Shadows;
   font-size: 20px;
-  color: var(--grey)
+  color: var(--grey);
+  text-align: center;
 }
 nav li .action {
   font-size: 30px; 
@@ -217,4 +218,34 @@ nav li .action {
 
 nav li:hover {
   background: var(--white)  
+}
+
+
+/* 
+  ====================
+  Header
+  ====================
+*/
+
+header {
+  background: var(--yellow);
+  display: grid;
+  grid-template-columns: 30vw 70vw;
+}
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  border: 10px solid transparent;
+  border-bottom-color: var(--white) 
+}
+header nav li {
+  width: 120px;
+}
+.logo {
+  border: 10px solid transparent;
+  border-top-color: var(--white)
+}
+header li.info {
+  font-size: 30px; 
+  font-family: Bangers;  
 }
