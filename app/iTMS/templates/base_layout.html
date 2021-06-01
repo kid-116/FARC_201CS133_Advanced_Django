@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,6 +8,9 @@
             {% block title %}
             {% endblock %}
         </title>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        {% block style %}
+        {% endblock %}
     </head>
     <body>
         <header>

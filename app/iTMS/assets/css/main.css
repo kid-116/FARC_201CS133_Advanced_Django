@@ -1,0 +1,220 @@
+/* 
+  ====================
+  Reset
+  ====================
+*/
+/* 
+  http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a:link, a:visited {
+  text-decoration: none;
+}
+
+
+
+/* 
+  ====================
+  Fonts
+  ====================
+*/
+
+@font-face {
+  font-family: Pattaya;
+  src: url("../fonts/Pattaya-Regular.ttf");
+}
+
+@font-face {
+  font-family: Shadows;
+  src: url("../fonts/ShadowsIntoLight-Regular.ttf");
+}
+
+@font-face {
+  font-family: Amatic;
+  src: url("../fonts/AmaticSC-Regular.ttf");
+}
+
+@font-face {
+  font-family: Orbitron;
+  src: url("../fonts/Orbitron-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Monoton;
+  src: url("../fonts/Monoton-Regular.ttf");
+}
+
+@font-face {
+  font-family: Bangers;
+  src: url("../fonts/Bangers-Regular.ttf");
+}
+
+@font-face {
+  font-family: Syncopate;
+  src: url("../fonts/Syncopate-Regular.ttf");
+}
+
+@font-face {
+  font-family: Audiowide;
+  src: url("../fonts/Audiowide-Regular.ttf");
+}
+
+
+/* 
+  ====================
+  Colors
+  ====================
+*/
+
+:root {
+  --black: #202020;
+  --dark-grey: #3f3f3f;
+  --grey: #707070;
+  --yellow: #ffdf6c;
+  --white: #ffffff;
+}
+
+
+/* 
+  ====================
+  Headers
+  ====================
+*/
+
+h1 {
+  font-family: Audiowide; 
+  font-size: 70px;
+  margin: 20px; 
+  color: var(--white);
+}
+
+h2 {
+  font-family: Syncopate; 
+  font-size: 50px;
+  margin: 18px;  
+  color: var(--black)
+}
+
+h3 {
+  font-family: Pattaya;
+  margin: 15px;
+  font-size: 30px;
+  color: var(--grey);
+}
+
+h4 {
+  font-family: Amatic;
+  margin: 12px;
+}
+
+h5 {
+  font-family: Amatic;
+  font-size: 40px;
+  margin: 10px; 
+  font-style: italic;
+  color: var(--black);
+}
+
+
+/* 
+  ====================
+  Divs
+  ====================
+*/
+
+.full {
+  height: 100vh;
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: grid 
+}
+
+
+/* 
+  ====================
+  Gradients
+  ====================
+*/
+
+.grad-y-w {
+  background: linear-gradient(to right, var(--yellow), var(--white));
+}
+
+
+/* 
+  ====================
+  Nav
+  ====================
+*/
+
+nav ul {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+}
+nav li {
+  display: block;
+  padding: 15px 0;
+  margin: 30px 30px;
+  width: 300px;
+  border: 2px solid var(--white);
+  border-radius: 5px;
+  font-family: Shadows;
+  font-size: 20px;
+  color: var(--grey)
+}
+nav li .action {
+  font-size: 30px; 
+  font-family: Bangers;
+}
+
+nav li:hover {
+  background: var(--white)  
+}
