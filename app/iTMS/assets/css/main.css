@@ -55,7 +55,6 @@ a:link, a:visited {
 }
 
 
-
 /* 
   ====================
   Fonts
@@ -102,6 +101,11 @@ a:link, a:visited {
   src: url("../fonts/Audiowide-Regular.ttf");
 }
 
+@font-face {
+  font-family: Pontano;
+  src: url("../fonts/PontanoSans-Regular.ttf");
+}
+
 
 /* 
   ====================
@@ -127,7 +131,7 @@ a:link, a:visited {
 h1 {
   font-family: Audiowide; 
   font-size: 70px;
-  margin: 20px; 
+  margin: 40px; 
   color: var(--white);
 }
 
@@ -248,4 +252,41 @@ header nav li {
 header li.info {
   font-size: 30px; 
   font-family: Bangers;  
+}
+
+
+/* 
+  ====================
+  Forms
+  ====================
+*/
+
+.form-table th {
+  font-family: Amatic;
+  text-align: left;
+  font-size: 30px;
+  padding: 10px;
+}
+.sub-button {
+  font-family: Bangers;
+  font-size: 30px;
+  padding: 15px 0;
+  margin: 30px 30px;
+  width: 100px;
+  border: 2px solid var(--white);
+  border-radius: 5px;
+  color: var(--grey);
+  text-align: center;
+  cursor: pointer;
+}
+.form-table input,
+.form-table input:focus,
+.form-table input:active {
+  font-family: Pontano;
+  font-size: 20px;
+  background: none;
+  background: var(--white);
+  display: block;
+  height: 35px;
+  border: 1px solid var(--grey);
 }
