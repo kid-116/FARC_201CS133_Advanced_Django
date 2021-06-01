@@ -205,6 +205,19 @@ h5 {
 
 /* 
   ====================
+  General
+  ====================
+*/
+
+p {
+  font-family: Pontano;
+  padding: 10px 20px;
+  font-style: italic;
+}
+
+
+/* 
+  ====================
   Nav
   ====================
 */
@@ -375,6 +388,22 @@ header li.info {
 }
 
 nav.routine-add {
-  background: #000;
-  
+  display: flex;
+  justify-content: flex-start;
+}
+nav.routine-add li {
+  font-size: 40px;
+  font-family: Bangers;
+  display: block;
+}
+nav.routine-add a:visited,
+nav.routine-add a:link {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+nav.routine-add a:hover {
+  color: var(--white);
+  background: var(--yellow);
 }

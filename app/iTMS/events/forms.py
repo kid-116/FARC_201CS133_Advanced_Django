@@ -13,8 +13,8 @@ class EventCreationForm(forms.ModelForm):
             'desc',
         ]
         widgets = {
-            'starts_at': forms.DateTimeInput(attrs={ 'placeholder': 'YYYY-MM-DD HH:MM::SS' }),
-            'ends_at': forms.DateTimeInput(attrs={ 'placeholder': 'YYYY-MM-DD HH:MM::SS' }),
+            'starts_at': forms.DateTimeInput(attrs={ 'placeholder': 'YYYY-MM-DD   HH:MM:SS' }),
+            'ends_at': forms.DateTimeInput(attrs={ 'placeholder': 'YYYY-MM-DD   HH:MM:SS' }),
         }
     def clean(self):
         cleaned_data = super().clean()

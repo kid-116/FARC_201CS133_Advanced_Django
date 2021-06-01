@@ -2,13 +2,13 @@ from django.db import models
 from sections.models import Section
 
 class Days(models.TextChoices):
-    MONDAY = 'Monday', 'M'
-    TUESDAY = 'Tuesday', 'TU'
-    WEDNESDAY = 'Wednesday', 'W'
-    THURSDAY = 'Thursday', 'TH'
-    FRIDAY = 'Friday', 'FR'
-    SATURDAY = 'Saturday', 'SA'
-    SUNDAY = 'Sunday', 'SU'
+    MONDAY = 'Monday', 'Monday'
+    TUESDAY = 'Tuesday', 'Tuesday'
+    WEDNESDAY = 'Wednesday', 'Wednesday'
+    THURSDAY = 'Thursday', 'Thursday'
+    FRIDAY = 'Friday', 'Friday'
+    SATURDAY = 'Saturday', 'Saturday'
+    SUNDAY = 'Sunday', 'Sunday'
 
 class Lecture(models.Model):
     id = models.AutoField(primary_key=True)
