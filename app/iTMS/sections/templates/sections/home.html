@@ -5,51 +5,89 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Routine</h1>
-    {% if not section %}
-        <h5>Section not found!</h5>
-        <P>Sorry, you haven't been added to any of the sections yet. Please wait for some time or cantact the system admin.</P>
-    {% else %}
-        {% if request.user.is_cr %}
-        <nav>
-            <ul>
-                <li><a href="{% url 'lectures:create_path' %}">Add a Lecture</a></li>
-                <li><a href="{% url 'events:create_path' %}">Create an Event</a></li>
-            </ul>
-        </nav>
+    <div class="lim-width">
+        <h2>Routine</h2>
+        {% if not section %}
+            <h5>Section not found!</h5>
+            <P>Sorry, you haven't been added to any of the sections yet. Please wait for some time or cantact the system admin.</P>
+        {% else %}
+            {% if request.user.is_cr %}
+            <nav class="routine-add">
+                <ul>
+                    <li><a href="{% url 'lectures:create_path' %}">Add a Lecture</a></li>
+                    <li><a href="{% url 'events:create_path' %}">Create an Event</a></li>
+                </ul>
+            </nav>
+            {% endif %}
+            {% if lectures %}
+                <table class="routine">    
+                    <caption><h3>Lectures</h3></caption>
+                    <tr>
+                        <th>Day</th>
+                        <th>Subject</th>
+                        <th>Starts at</th>
+                        <th>Ends at</th>
+                    </tr>
+                    {% firstof "NULL" as day %}
+                    {% for lecture in lectures %}
+                        <tr>
+                            <th>
+                                {% if day != lecture.day %}
+                                    {% firstof lecture.day as day %}
+                                    <h4>{{ day }}</h4>
+                                {% endif %}
+                            </th>
+                            <td>{{ lecture.subject }}</td>
+                            <td>{{ lecture.starts_at }}</td>
+                            <td>{{ lecture.ends_at }}</td>
+                            {% if request.user.is_cr %}
+                                <td><a href="{% url 'lectures:edit_path' id_l=lecture.id %}">Edit</a></td>
+                                <td><a href="{% url 'lectures:delete_path' id_l=lecture.id %}">Delete</a></td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            {% if events %}
+                <div class="col-2">
+                    {% for event in events %}
+                        <table class="event">                    
+                            <caption><h3>{{ event.name }}</h3></caption>
+                            <tr>
+                                <th>Starts</th>
+                                <td>{{ event.starts_at }}</td>
+                            </tr>
+                            <tr>
+                                <th>Ends</th>
+                                <td>{{ event.ends_at }}</td>
+                            </tr>
+                            <tr>
+                                <th>Venue</th>
+                                <td>{{ event.venue }}</td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>{{ event.desc }}</td>
+                            </tr>
+                            {% if request.user.is_cr %}
+                                <tr>
+                                    <th>
+                                    <td><a href="{% url 'events:edit_path' id_e=event.id %}">Edit</a></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                    <td><a href="{% url 'events:delete_path' id_e=event.id %}">Delete</a></td>
+                                </tr>    
+                            {% endif %}
+                        </table>
+                    {% endfor %}
+                </div>
+            {% endif %}
         {% endif %}
-        {% if lectures %}
-            <h2>Lectures</h2>
-            {% firstof "NULL" as day %}
-            {% for lecture in lectures %}
-                {% if day != lecture.day %}
-                    {% firstof lecture.day as day %}
-                    <h3>{{ day }}</h3>
-                {% endif %}
-                {{ lecture.subject }}
-                {{ lecture.starts_at }}
-                {{ lecture.ends_at }}
-                {% if request.user.is_cr %}
-                    <a href="{% url 'lectures:edit_path' id_l=lecture.id %}">Edit</a>
-                    <a href="{% url 'lectures:delete_path' id_l=lecture.id %}">Delete</a>
-                {% endif %}
-                <br>
-            {% endfor %}
-        {% endif %}
-        {% if events %}
-            <h2>Events</h2>
-            {% for event in events %}
-                {{ event.name }}
-                {{ event.starts_at }}
-                {{ event.ends_at }}
-                {{ event.venue }}
-                {{ event.desc }}
-                {% if request.user.is_cr %}
-                    <a href="{% url 'events:edit_path' id_e=event.id %}">Edit</a>
-                    <a href="{% url 'events:delete_path' id_e=event.id %}">Delete</a>
-                {% endif %}
-                <br>
-            {% endfor %}
-        {% endif %}
-    {% endif %}
+    </div>
 {% endblock %}

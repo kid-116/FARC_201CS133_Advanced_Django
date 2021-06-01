@@ -23,6 +23,7 @@
                 <ul>
                     {% if user.is_authenticated %}
                         <li class="info">{{ request.user.username }}</li>
+                        <li class="info">{{ request.user.section }}</li>
                         <a href="{% url 'accounts:logout_path' %}"><li><span class="action">Logout</span></li></a>
                     {% else %}
                         <a href="{% url 'accounts:login_path' %}" class="login"><li><span class="action">Login</span></li></a>

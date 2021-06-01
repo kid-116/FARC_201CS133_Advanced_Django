@@ -180,6 +180,17 @@ h5 {
   display: grid 
 }
 
+.lim-width {
+  width: 80vw;
+  margin: 100px auto;
+}
+
+.col-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+}
+
 
 /* 
   ====================
@@ -289,4 +300,81 @@ header li.info {
   display: block;
   height: 35px;
   border: 1px solid var(--grey);
+}
+
+
+/* 
+  ====================
+  Routine
+  ====================
+*/
+
+.routine caption h3 {
+  font-size: 60px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+.routine th {
+  font-size: 50px;
+  font-family: Amatic;
+  color: var(--grey)
+}
+.routine td {
+  padding: 10px 40px;
+  font-family: Shadows;
+  font-size: 40px;
+  color: var(--black)
+}
+.routine tr:first-child {
+  border: 1px solid transparent;
+  height: 70px;
+  border-bottom-color: var(--yellow)
+}
+.routine tr th:first-child {
+  border: 1px solid transparent;
+  border-right-color: var(--yellow);
+  width: 200px; 
+}
+.routine td a {
+  font-size: 30px;
+  color: var(--dark-grey)
+}
+.routine td a:hover {
+  text-decoration: underline;
+}
+
+.event caption h3 {
+  font-size: 40px;
+  padding-bottom: 10px;
+  text-decoration: underline;
+}
+.event {
+  display: block;
+  width: auto;
+  border: 1px solid var(--yellow);
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.event th {
+  font-size: 40px;
+  font-family: Amatic;
+  color: var(--grey)
+}
+.event td {
+  padding: 10px 40px;
+  font-family: Shadows;
+  font-size: 30px;
+  color: var(--black)
+}
+.event td a {
+  font-size: 30px;
+  color: var(--dark-grey)
+}
+.event td a:hover {
+  text-decoration: underline;
+}
+
+nav.routine-add {
+  background: #000;
+  
 }
