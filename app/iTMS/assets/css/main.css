@@ -133,6 +133,7 @@ h1 {
   font-size: 70px;
   margin: 40px; 
   color: var(--white);
+  letter-spacing: 10px;
 }
 
 h2 {

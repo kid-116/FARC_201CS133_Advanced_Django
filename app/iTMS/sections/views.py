@@ -10,8 +10,9 @@ def home(request):
     if section:
         events = section.events.order_by('starts_at')
         order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-        qs = Lecture.objects.filter(section=section)
+        qs = Lecture.objects.filter(section=section).order_by('starts_at')
         lectures = sorted(qs, key=lambda l: order.index(l.day))
+
     return render(request, 'sections/home.html', {
         'section': section,
         'lectures': lectures,
