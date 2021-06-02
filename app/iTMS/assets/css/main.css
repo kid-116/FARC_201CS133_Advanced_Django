@@ -189,6 +189,7 @@ h5 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
 
 
@@ -350,9 +351,7 @@ header li.info {
 }
 .routine td a {
   font-size: 30px;
-  color: var(--dark-grey)
-}
-.routine td a:hover {
+  color: var(--dark-grey);
   text-decoration: underline;
 }
 
@@ -371,19 +370,17 @@ header li.info {
 .event th {
   font-size: 40px;
   font-family: Amatic;
-  color: var(--grey)
+  color: var(--grey);
 }
 .event td {
   padding: 10px 40px;
   font-family: Shadows;
   font-size: 30px;
-  color: var(--black)
+  color: var(--black);
 }
 .event td a {
   font-size: 30px;
-  color: var(--dark-grey)
-}
-.event td a:hover {
+  color: var(--dark-grey);
   text-decoration: underline;
 }
 
