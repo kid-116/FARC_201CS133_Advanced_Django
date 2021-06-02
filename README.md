@@ -7,5 +7,6 @@
 
 ## Running the App
 - Clone the repository.
--- https://github.com/kid-116/FARC_201CS133_Advanced_Django.git
+- ```git https://github.com/kid-116/FARC_201CS133_Advanced_Django.git```
+- Change your directory to FARC_201CS133_Advanced_Django/app/iTMS
 - 
