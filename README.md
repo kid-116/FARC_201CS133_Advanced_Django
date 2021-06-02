@@ -22,6 +22,11 @@
 ## Known Bugs
 - None so far. Fingers crossed.
 
+## Planned Features
+- Highlight ongoing lectures and events.
+- Better styling
+- Create an app 'organisations' so that different institutions can manage their groups and handover the permissions of the superuser to an 'organisation admin'.
+
 ## Screenshots
 ![landing](https://user-images.githubusercontent.com/75692643/120427259-390fab80-c38f-11eb-9bda-25fe33d5e415.jpeg)
 ![signup](https://user-images.githubusercontent.com/75692643/120427266-3ad96f00-c38f-11eb-8901-0b25fe59b90b.jpeg)
