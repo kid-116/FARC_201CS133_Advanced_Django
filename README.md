@@ -25,6 +25,7 @@
 ## Planned Features
 - Highlight ongoing lectures and events.
 - Better styling
+- A calender layout
 - Create an app 'organisations' so that different institutions can manage their groups and handover the permissions of the superuser to an 'organisation admin'.
 
 ## Screenshots
