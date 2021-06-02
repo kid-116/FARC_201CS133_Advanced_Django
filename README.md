@@ -8,6 +8,7 @@
 ## Running the App
 - Clone the repository.
 - ```git clone https://github.com/kid-116/FARC_201CS133_Advanced_Django.git```
-- Change your directory to FARC_201CS133_Advanced_Django/app/iTMS
+- Go into yout terminal and change your directory to FARC_201CS133_Advanced_Django/app/iTMS
 - Now execute ```python manage.py runserver``` to have the local server up and running.
-- 
+- Voila!
+- Now all you have to do is visit ```localhost:8000``` in your browser to checkout the app.
